@@ -1,0 +1,43 @@
+.loader {
+  box-sizing: content-box;
+  position: relative;
+  width: 26.25rem;
+  height: 26.25rem;
+  margin: 0 auto;
+  background-color: $color-drk;
+  border-radius: 50%;
+  animation: spin 1.6s infinite linear;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8.5rem;
+    height: 8.5rem;
+    background-color: $color-drk;
+    border-top: 8.5rem solid $color-drk-lte;
+    border-right: 8.5rem solid $color-drk;
+    border-bottom: 8.5rem solid $color-drk-lte;
+    border-left: 8.5rem solid $color-drk;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: $color-drk;
+    border: 3.5rem solid $color-pri;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+

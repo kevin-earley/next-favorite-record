@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @include breakpoint(sm) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-body;
+  height: 100vh;
+  background: linear-gradient(to top, rgba($color-drk, .5), rgba($color-drk, .5)), url('../images/bg-img-mick-haupt.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  padding: 1rem;
+  padding-top: calc(1rem + 4vh);
+}
+
+::placeholder {
+  font-weight: 400;
+  color: rgba($color-drk, .25);
+}

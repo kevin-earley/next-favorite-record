@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>.:: Next Favorite Record ::.</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Shrikhand&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+	<main>
+		<div class="card">
+
+			<div class="form" style="display: block;">
+				<h1 class="form-heading">
+					<i class="fas fa-record-vinyl"></i> Next Favorite Record
+				</h1>
+				<p class="form-description">
+					Get something cool. Enter two of your favorite bands, artists, rappers, singers - whoever, and discover your next favorite record.
+				</p>
+
+				<form>
+					<div class="form-inputs">
+						<input type="text" class="artist-input-01" placeholder="First Artist Name" value=""></input>
+						<input type="text" class="artist-input-02" placeholder="Second Artist Name" value=""></input>
+					</div>
+					<div class="form-button">
+						<button type="submit" class="submit">Gimme a Record</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="results" style="display: none;">
+				<h2 class="results-album-artist"></h2>
+				<h3 class="results-album-title"></h3>
+
+				<a class="results-album-link" href="#" target="_blank">
+					<img class="results-album-img" src="" alt="">
+					<i class="fa-solid fa-circle-play"></i>
+				</a>
+
+				<a class="results-redo-link">Hey, can I try that again?</a>
+			</div>
+
+		</div>
+	</main>
+
+	<script src="scripts/main.js" type="module"></script>
+</body>
+</html>
