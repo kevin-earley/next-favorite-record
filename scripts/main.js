@@ -1,52 +1,71 @@
 import { ui } from "./modules/ui.js";
 import { lastfm } from "./modules/lastfm.js";
 
-ui.submitBtn.addEventListener('click', clickSubmit);
-ui.redoLink.addEventListener('click', clickRedo);
-2
-function clickSubmit(event) {
+ui.submitBtn.addEventListener('click', handleSubmit);
+ui.redoLink.addEventListener('click', handleRedo);
+
+async function handleSubmit(event) {
+  if (event.preventDefault) event.preventDefault();
+
   ui.removeAlert();
 
-  if (ui.artistInput01.value !== '' && ui.artistInput02.value !== '') {
+  try {
+    if (ui.artistInput01.value === '' || ui.artistInput02.value === '') throw new Error('Please fill in both inputs.');
+
     ui.hideForm();
     ui.appendLoader();
 
-    setTimeout(function(){
-    
-      lastfm.getRandomCommonSimilarArtist(ui.artistInput01.value, ui.artistInput02.value)
-      .then(randomSimilarArtist => {
-        return lastfm.getArtistTopAlbum(randomSimilarArtist)
-      })
-      .then(similarArtistTopAlbum => {
-        ui.removeLoader();
-        ui.showResults(similarArtistTopAlbum);
-      })
-      .catch(error => {
-        if (error.message === 'Albums length error') {
-          clickSubmit();
-        } else {
-          ui.removeLoader();
-          ui.showForm();
-          ui.appendAlert(error.message);
-        }
-      })
+    const similarArtists = await lastfm.getSimilarArtists([ui.artistInput01.value, ui.artistInput02.value]);
 
-    }, 1000);
+    const filteredSimilarArtists = filterSimilarArtists(similarArtists);
 
-  } else {
-    ui.appendAlert('Fill in both inputs.');
-  }
+    const randomSimilarArtist = filteredSimilarArtists[Math.floor(Math.random() * filteredSimilarArtists.length)];
 
-  if (event) {
-    event.preventDefault();
+    const topAlbums = await lastfm.getTopAlbums(randomSimilarArtist);
+
+    if (topAlbums.length < 50) throw new Error('Albums length error.');
+
+    ui.removeLoader();
+    ui.showResults(filterTopAlbums(topAlbums));
+
+  } catch(error) {
+    if (error.message === 'Albums length error.') {
+      handleSubmit(event);
+    } else {
+      ui.removeLoader();
+      ui.showForm();
+      ui.appendAlert(error.message);
+    }
   }
 }
 
-function clickRedo(event) {
+function filterSimilarArtists(similarArtists) {
+  const filteredSimilarArtists = similarArtists[0].filter(artist => similarArtists[1].includes(artist));
+
+  if (filteredSimilarArtists.length === 0) throw new Error('No matches found.');
+
+  return filteredSimilarArtists;
+}
+
+function filterTopAlbums(topAlbums) {
+  const filteredTopAlbums = topAlbums.filter(album => removeCompilations(album.name.toLowerCase()))
+    .filter(album => album.image[3]["#text"].length > 0);
+
+  return filteredTopAlbums[0];
+}
+
+function removeCompilations(album) {
+  const compilationKeywords = "best, collection, deluxe, disc, essential, greatest hits, hits, volume, edition, standard".split(", ");
+  let flag = 0;
+
+  compilationKeywords.forEach(function(keyword) {
+    flag = flag + album.includes(keyword)
+  });
+
+  return (flag === 0);
+}
+
+function handleRedo() {
   ui.hideResults();
   ui.showForm();
-
-  if (event) {
-    event.preventDefault();
-  }
 }

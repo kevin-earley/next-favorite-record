@@ -3,98 +3,36 @@ class Lastfm {
     this.apiKey = 'c136737ab26b0afd9e14e201b8571111';
   }
 
+  artificialLoad(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
-  async getRandomCommonSimilarArtist(artist01, artist02) {
-    let artistInputValues = [artist01, artist02];
+  async getSimilarArtists(artists) {
     let mappedSimilarArtists = [];
 
     for (let i = 0; i < 2; i++) {
-      // fetch artist data from api
-      let fetchedData = await fetch (`https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=${artistInputValues[i]}&api_key=${this.apiKey}&format=json&autocorrect[0|1]`);
+      await this.artificialLoad(500);
 
-      // throw error if bad response from api
-      if (fetchedData.status >= 400 && fetchedData.status < 600) {
-        let parsedJsonData = await fetchedData.json();
-        
-        throw new Error(parsedJsonData.message);
+      const data = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=${artists[i]}&api_key=${this.apiKey}&format=json&autocorrect[0|1]`);      
+      const parsed = await data.json();
 
-      } else {
-        // if no error, await parsed json
-        let parsedJsonData = await fetchedData.json();
+      if (data.status >= 400 && data.status < 600) throw new Error(parsed.message);
+      if (parsed.error) throw new Error(`Artist #${i + 1} not found.`);
 
-        // throw error if unable to find artist
-        if (parsedJsonData.error) {
-          throw new Error(`Artist #${i + 1} not found.`)
-
-        } else {
-          // map similar artists' names and push them to mappedSimilarArtists
-          mappedSimilarArtists.push(parsedJsonData.similarartists.artist.map(artist => artist.name));
-        }
-      }
+      mappedSimilarArtists.push(parsed.similarartists.artist.map(artist => artist.name));
     }
 
-    // create an arr with all matching artist names found in both arrs in mappedSimilarArtists
-    const filteredSimilarArtists = mappedSimilarArtists[0].filter(artist => mappedSimilarArtists[1].includes(artist));
-
-    // throw error if no artists are found in either arrs in mappedSimilarArtists
-    if (filteredSimilarArtists.length === 0) {
-      throw new Error('No matches found.');
-
-    } else {
-      // set a random similar artist from filteredSimilarArtists
-      const randomSimilarArtist = filteredSimilarArtists[Math.floor(Math.random() * filteredSimilarArtists.length)];
-
-      return randomSimilarArtist;
-    }
+    return mappedSimilarArtists;
   }
 
-  
-  async getArtistTopAlbum(randomSimilarArtist) {   
-    let similarArtistTopAlbum;
+  async getTopAlbums(artist) {
+    const data = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artist}&api_key=${this.apiKey}&format=json`);
+    const parsed = await data.json();
 
-    // fetch artist's top albums data from api 
-    const fetchedData = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${randomSimilarArtist}&api_key=${this.apiKey}&format=json`);
+    if (data.status >= 400 && data.status < 600) throw new Error(parsed.message);
 
-    // throw error if bad response from api
-    if (fetchedData.status >= 400 && fetchedData.status < 600) {
-      throw new Error('Bad response from server, please try again.');
-
-    } else {
-      // if no error, await parsed json
-      const parsedJsonData = await fetchedData.json();
-
-      // assign artist albums obj to a variable
-      const artistAlbums = parsedJsonData.topalbums.album;
-
-      if (artistAlbums.length < 50) {
-        throw new Error('Albums length error');
-      }
-    
-      // function to filter out compilation albums
-      function doesNotContain(albumName) {
-        const compilationKeywords = "best, collection, deluxe, disc, essential, greatest hits, hits, volume, edition, standard".split(", ");
-        let flag = 0;
-
-        compilationKeywords.forEach(function(keyword) {
-          flag = flag + albumName.includes(keyword)
-        });
-
-        return (flag === 0);
-      }
-  
-      // filter out compilaton albums
-      const filteredAlbumsByCompKeywords = artistAlbums.filter(album => doesNotContain(album.name.toLowerCase()));
-  
-      // filter out albums with missing imgs
-      const filteredAlbumsByMissingImgs = filteredAlbumsByCompKeywords.filter(album => album.image[3]["#text"].length > 0);
-  
-      // assign top album obj to similarArtistTopAlbum variable
-      similarArtistTopAlbum = filteredAlbumsByMissingImgs[0];
-    }
-
-    return similarArtistTopAlbum;
+    return parsed.topalbums.album;    
   }
 }
-
 
 export const lastfm = new Lastfm();

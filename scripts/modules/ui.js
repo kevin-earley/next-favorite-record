@@ -16,7 +16,6 @@ class UI {
     this.redoLink = document.querySelector('.results-redo-link');
   }
 
-  
   // Form Functions
   showForm() {
     this.form.style.display = "block";
@@ -26,7 +25,6 @@ class UI {
     this.form.style.display = "none";
   }
   
-
   // Results Functions
   showResults(similarArtistTopAlbum) {
     this.results.style.display = "block";
@@ -44,7 +42,6 @@ class UI {
     this.resultsAlbumImg.src = "";
   }
 
-
   // Loader Functions
   appendLoader() {
     if (document.querySelector('.loader') === null) {
@@ -55,9 +52,10 @@ class UI {
   }
 
   removeLoader() {
-    document.querySelector('.loader').remove();
+    if (document.querySelector('.loader') !== null) {
+      document.querySelector('.loader').remove();
+    }
   }
-
 
   // Alert Functions
   appendAlert(msg) {
@@ -73,6 +71,5 @@ class UI {
     }
   }
 }
-
 
 export const ui = new UI();

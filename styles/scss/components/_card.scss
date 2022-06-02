@@ -1,6 +1,6 @@
 .card {
   max-width: 54rem;
-  min-height: 70rem;
+  min-height: 68rem;
   margin: 0 auto;
   padding: 6rem 7rem;
   background-color: $color-lte;
@@ -49,6 +49,7 @@
         color: $color-drk;
         background-color: #fff;
         border: 1px solid  $color-lte-drk;
+        border-radius: 6px;
         outline: 0;
   
         &:focus {
@@ -69,7 +70,7 @@
         color:  $color-lte;
         background: $color-pri;
         border: none;
-        border-radius: 10px;
+        border-radius: 50px;
         outline: 0;
         cursor: pointer;
         transition: all .2s;

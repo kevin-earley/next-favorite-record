@@ -30,7 +30,11 @@ img {
 
 main {
   padding: 1rem;
-  padding-top: calc(1rem + 4vh);
+  padding-top: calc(1rem + 5vh);
+
+  @include breakpoint(sm) {
+    padding-top: calc(1rem + 2vh);
+  }
 }
 
 ::placeholder {
