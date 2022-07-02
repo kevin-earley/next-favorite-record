@@ -15,40 +15,42 @@
 </head>
 <body>
 	<main>
-		<div class="card">
 
-			<div class="form" style="display: block;">
-				<h1 class="form-heading">
-					<i class="fas fa-record-vinyl"></i> Next Favorite Record
-				</h1>
-				<p class="form-description">
-					Get something cool. Enter two of your favorite bands, artists, rappers, singers - whoever, and discover your next favorite record.
-				</p>
+			<div class="card">
 
-				<form>
-					<div class="form-inputs">
-						<input type="text" class="artist-input-01" placeholder="First Artist Name" value=""></input>
-						<input type="text" class="artist-input-02" placeholder="Second Artist Name" value=""></input>
-					</div>
-					<div class="form-button">
-						<button type="submit" class="submit">Gimme a Record</button>
-					</div>
-				</form>
+				<div class="form" style="display: block;">
+					<h1 class="form-heading">
+						<i class="fas fa-record-vinyl"></i> Next Favorite Record
+					</h1>
+					<p class="form-description">
+						Get something cool. Enter two of your favorite bands, artists, rappers, singers - whoever, and discover your next favorite record.
+					</p>
+
+					<form>
+						<div class="form-inputs">
+							<input type="text" class="artist-input-01" placeholder="First Artist Name" value=""></input>
+							<input type="text" class="artist-input-02" placeholder="Second Artist Name" value=""></input>
+						</div>
+						<div class="form-button">
+							<button type="submit" class="submit">Gimme a Record</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="results" style="display: none;">
+					<h2 class="results-album-artist"></h2>
+					<h3 class="results-album-title"></h3>
+
+					<a class="results-album-link" href="#" target="_blank">
+						<img class="results-album-img" src="" alt="">
+						<i class="fa-solid fa-circle-play"></i>
+					</a>
+
+					<a class="results-redo-link">Hey, can I try that again?</a>
+				</div>
+
 			</div>
 
-			<div class="results" style="display: none;">
-				<h2 class="results-album-artist"></h2>
-				<h3 class="results-album-title"></h3>
-
-				<a class="results-album-link" href="#" target="_blank">
-					<img class="results-album-img" src="" alt="">
-					<i class="fa-solid fa-circle-play"></i>
-				</a>
-
-				<a class="results-redo-link">Hey, can I try that again?</a>
-			</div>
-
-		</div>
 	</main>
 
 	<script src="scripts/main.js" type="module"></script>
