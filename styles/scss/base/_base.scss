@@ -11,7 +11,7 @@ html {
   box-sizing: border-box;
 
   @include breakpoint(sm) {
-    font-size: 50%;
+    font-size: 56.25%;
   }
 }
 
@@ -27,17 +27,17 @@ img {
   max-width: 100%;
 }
 
-main {
-  height: 100vh;
-  padding: 1rem;
-  padding-top: calc(1rem + 6vh);
+.container {
+  margin: auto 0;
+  padding: calc(2rem + 4vh) 2rem;
 
   @include breakpoint(sm) {
-    padding-top: calc(1rem + 4vh);
+    padding: 2rem;
   }
 }
 
 ::placeholder {
-  font-weight: 400;
+  font-weight: 200;
+  letter-spacing: .15px;
   color: rgba($color-drk, .5);
 }

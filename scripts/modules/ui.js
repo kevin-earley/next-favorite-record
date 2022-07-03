@@ -32,7 +32,6 @@ class UI {
     this.resultsAlbumTitle.textContent = similarArtistTopAlbum.name;
     this.resultsAlbumLink.href = similarArtistTopAlbum.url;
     this.resultsAlbumLink.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,"+")}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g,"+")}`;
-    // this.resultsAlbumLink.href = similarArtistTopAlbum.url;
     this.resultsAlbumImg.src = similarArtistTopAlbum.image[3]["#text"];
   }
 

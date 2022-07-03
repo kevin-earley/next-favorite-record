@@ -2,23 +2,29 @@
   max-width: 54rem;
   min-height: 68rem;
   margin: 0 auto;
-  padding: 6rem 7.5rem;
+  padding: 6rem;
   background-color: $color-lte;
   border-radius: 10px;
   box-shadow: 0 8px 12px rgba($color-drk, .25);
 
   @include breakpoint(sm) {
-    padding: 6rem 4rem;
+    min-height: 56rem;
+    padding: 4rem;
   }
   
   .form {
     &-heading {
       font-family: $font-heading;
-      font-size: 2.6rem;
+      font-size: 2.9rem;
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: $margin-sm;
       color: $color-drk;
+
+      @include breakpoint(sm) {
+        font-size: 2rem;
+      }
+      
   
       i {
         margin-right: .4rem;
@@ -34,22 +40,27 @@
       width: 80%;
       margin-bottom: $margin-md;
       color: $color-drk-lte;
+
+      @include breakpoint(sm) {
+        width: 100%;
+      }
+      
     }
 
     &-inputs {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
-      height: 12rem;
+      height: 11.4rem;
       margin-bottom: $margin-lg;
   
       input {
         font-family: $font-body;
         font-size: 1.7rem;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: .15px;
         width: 100%;
-        padding: 1.6rem 1.8rem;
+        padding: 1.2rem 1.4rem;
         color: $color-drk;
         background-color: #fff;
         border: 1px solid  $color-lte-drk;
@@ -59,6 +70,7 @@
         &:focus {
           margin: -1px;
           border: 2px solid $color-pri;
+          box-shadow: 0px 0px 4px rgba($color-pri-alt, .5);
         }
       }
     }
@@ -71,7 +83,7 @@
         font-size: 1.7rem;
         font-weight: 600;
         letter-spacing: .15px;
-        padding: 1.8rem 3.8rem;
+        padding: 1.4rem 3.2rem;
         color:  $color-lte;
         background: $color-pri;
         border: none;
@@ -82,7 +94,6 @@
       
         &:hover {
           background: $color-pri-alt;
-          transform: translateY(-2px);
         }
       }
     }
@@ -99,8 +110,8 @@
     }
 
     &-album-title {
-      font-size: 2.6rem;
-      font-weight: 700;
+      font-size: 2.5rem;
+      font-weight: 800;
       letter-spacing: 0px;
       line-height: 1.4;
       color: $color-pri;
