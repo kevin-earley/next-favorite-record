@@ -47,13 +47,10 @@ img {
 }
 
 .container {
-  margin: auto 0;
-  padding: calc(2rem + 4vh) 2rem;
-}
-@media (max-width: 576px) {
-  .container {
-    padding: 2rem;
-  }
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 2rem;
 }
 
 ::placeholder {
@@ -63,6 +60,7 @@ img {
 }
 
 .card {
+  width: 100%;
   max-width: 54rem;
   min-height: 68rem;
   margin: 0 auto;
@@ -75,6 +73,7 @@ img {
   .card {
     min-height: 56rem;
     padding: 4rem;
+    margin-bottom: 4rem;
   }
 }
 .card .form-heading {
@@ -87,7 +86,7 @@ img {
 }
 @media (max-width: 576px) {
   .card .form-heading {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 .card .form-heading i {

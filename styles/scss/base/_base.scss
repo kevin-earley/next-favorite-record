@@ -28,12 +28,10 @@ img {
 }
 
 .container {
-  margin: auto 0;
-  padding: calc(2rem + 4vh) 2rem;
-
-  @include breakpoint(sm) {
-    padding: 2rem;
-  }
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 2rem;
 }
 
 ::placeholder {
