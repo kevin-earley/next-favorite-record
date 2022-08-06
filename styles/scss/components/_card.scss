@@ -1,78 +1,58 @@
 .card {
   width: 100%;
-  max-width: 54rem;
-  min-height: 68rem;
+  max-width: 56rem;
+  min-height: 72rem;
   margin: 0 auto;
-  padding: 6rem;
-  background-color: $color-lte;
-  border-radius: 10px;
-  box-shadow: 0 8px 12px rgba($color-drk, .25);
-
-  @include breakpoint(sm) {
-    min-height: 56rem;
-    padding: 4rem;
-    margin-bottom: 4rem;
-  }
+  padding: 5.2rem 5.6rem;
+  background-color: $c-gray-1;
+  border-radius: 12px;
+  box-shadow: 0 8px 64px rgba($c-gray-4, .2);
   
   .form {
     &-heading {
       font-family: $font-heading;
-      font-size: 2.9rem;
+      font-size: 2.7rem;
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: $margin-sm;
-      color: $color-drk;
-
-      @include breakpoint(sm) {
-        font-size: 2.2rem;
-      }
-      
-  
-      i {
-        margin-right: .4rem;
-        color: $color-pri;
-      }
+      color: $c-gray-4;
     }
 
     &-description {
       display: block;
-      font-size: 13px;
+      font-size: 1.6rem;
       font-weight: 400;
-      letter-spacing: .4px;
-      width: 80%;
+      letter-spacing: .25px;
+      width: 84%;
       margin-bottom: $margin-md;
-      color: $color-drk-lte;
-
-      @include breakpoint(sm) {
-        width: 100%;
-      }
-      
+      color: $c-gray-3;
     }
 
     &-inputs {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
-      height: 11.4rem;
+      height: 12.8rem;
       margin-bottom: $margin-lg;
   
       input {
         font-family: $font-body;
-        font-size: 1.7rem;
-        font-weight: 600;
-        letter-spacing: .15px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: .5px;
         width: 100%;
-        padding: 1.2rem 1.4rem;
-        color: $color-drk;
-        background-color: #fff;
-        border: 1px solid  $color-lte-drk;
-        border-radius: 8px;
+        height: 4rem;
+        padding: 2.8rem 3.6rem;
+        color: $c-gray-4;
+        background-color: $c-white;
+        border: 1px solid  $c-gray-2;
+        border-radius: 50px;
         outline: 0;
+        box-shadow: 0 8px 20px rgba($c-gray-4, .08);
   
         &:focus {
           margin: -1px;
-          border: 2px solid $color-pri;
-          box-shadow: 0px 0px 4px rgba($color-pri-alt, .5);
+          border: 2px solid $c-pri;
         }
       }
     }
@@ -82,12 +62,12 @@
   
       button {
         font-family: $font-body;
-        font-size: 1.7rem;
-        font-weight: 600;
+        font-size: 1.8rem;
+        font-weight: 700;
         letter-spacing: .15px;
-        padding: 1.4rem 3.2rem;
-        color:  $color-lte;
-        background: $color-pri;
+        padding: 2rem 4.4rem;
+        color:  $c-white;
+        background: $c-pri;
         border: none;
         border-radius: 50px;
         outline: 0;
@@ -95,28 +75,28 @@
         transition: all .2s;
       
         &:hover {
-          background: $color-pri-alt;
+          background: $c-pri-alt;
         }
       }
     }
   }
 
   .results {
-    &-album-artist {
-      font-size: 1.7rem;
-      font-weight: 600;
-      letter-spacing: .15px;
-      line-height: 1.4;
-      color: $color-drk;
-      margin-bottom: .4rem;
+    &-album-title {
+      font-size: 2.7rem;
+      font-weight: 700;
+      letter-spacing: 0px;
+      line-height: 1.2;
+      color: $c-pri;
+      margin-bottom: $margin-xs;
     }
 
-    &-album-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: 0px;
-      line-height: 1.4;
-      color: $color-pri;
+    &-album-artist {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: .15px;
+      line-height: 1.2;
+      color: $c-gray-4;
       margin-bottom: $margin-md;
     }
 
@@ -129,7 +109,7 @@
       .results-album-img {
         display: block;
         width: 100%;
-        border: 1px solid $color-lte-drk;
+        border: 1px solid $c-gray-2;
         border-radius: 8px;
         opacity: 1;
         transition: all .4s;
@@ -139,10 +119,10 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        font-size: 8.5rem;
-        color: $color-pri;
-        background-color: #fff;
-        border: 6px solid #fff;
+        font-size: 9.2rem;
+        color: $c-pri;
+        background-color: $c-white;
+        border: 8px solid $c-white;
         border-radius: 50%;
         opacity: 0;
         transform: translate(-50%, -50%) scale(0);
@@ -151,7 +131,7 @@
 
       &:hover {
         & .results-album-img {
-          opacity: .75;
+          opacity: .8;
         }
 
         i {
@@ -162,11 +142,11 @@
     }
 
     &-redo-link {
-      font-size: 13px;
-      font-weight: 500;
+      font-size: 1.3rem;
+      font-weight: 400;
       letter-spacing: .4px;
       text-decoration: none;
-      color: $color-drk;
+      color: $c-gray-3;
 
       &:hover {
         text-decoration: underline;
@@ -177,10 +157,10 @@
 }
 
 .alert-msg {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 400;
   letter-spacing: .1px;
   text-align: right;
   margin-top: $margin-sm;
-  color: crimson;
+  color: $c-alert;
 }
