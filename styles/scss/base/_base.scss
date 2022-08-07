@@ -27,9 +27,17 @@ img {
   max-width: 100%;
 }
 
-.container {
+main {
   display: grid;
   place-items: center;
   height: 100vh;
+
+  @include breakpoint(sm) {
+    height: 90vh;
+  }
+}
+
+.container {
+  width: 100%;
   padding: 2rem;
 }

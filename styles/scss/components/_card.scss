@@ -1,5 +1,5 @@
 .card {
-  width: 100%;
+  // width: 100%;
   max-width: 56rem;
   min-height: 72rem;
   margin: 0 auto;
@@ -7,6 +7,11 @@
   background-color: $c-gray-1;
   border-radius: 12px;
   box-shadow: 0 8px 64px rgba($c-gray-4, .2);
+
+  @include breakpoint(sm) {
+    min-height: 60rem;
+    padding: 4.8rem 4rem;
+  }
   
   .form {
     &-heading {
@@ -119,7 +124,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        font-size: 9.2rem;
+        font-size: 10rem;
         color: $c-pri;
         background-color: $c-white;
         border: 8px solid $c-white;
@@ -142,9 +147,9 @@
     }
 
     &-redo-link {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       font-weight: 400;
-      letter-spacing: .4px;
+      letter-spacing: .1px;
       text-decoration: none;
       color: $c-gray-3;
 
