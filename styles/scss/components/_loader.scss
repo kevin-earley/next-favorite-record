@@ -1,8 +1,8 @@
 .loader {
   position: relative;
   margin: 0 auto;
-  width: 32rem;
-  height: 32rem;
+  width: 28rem;
+  height: 28rem;
   background: 
     linear-gradient(0deg, transparent 50%, rgba($c-gray-4, .8) 50%) no-repeat 100% 0,
     linear-gradient(90deg, rgba($c-gray-4, .8) 50%, transparent 50%) no-repeat 0 100%,
@@ -18,8 +18,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8rem;
-    height: 8rem;
+    width: 7.6rem;
+    height: 7.6rem;
     background: $c-gray-4;
     border: 1px solid $c-gray-4;
     border-radius: 50%;

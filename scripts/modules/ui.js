@@ -3,8 +3,8 @@ class UI {
     this.card = document.querySelector('.card');
 
     this.form = document.querySelector('.form');
-    this.artistInput01 = document.querySelector('.artist-input-01');
-    this.artistInput02 = document.querySelector('.artist-input-02');
+    this.artistInput01 = document.querySelector('#artist-input-01');
+    this.artistInput02 = document.querySelector('#artist-input-02');
     this.submitBtn = document.querySelector('.submit');
 
     this.results = document.querySelector('.results');

@@ -1,5 +1,4 @@
 .card {
-  // width: 100%;
   max-width: 56rem;
   min-height: 72rem;
   margin: 0 auto;
@@ -9,7 +8,6 @@
   box-shadow: 0 8px 64px rgba($c-gray-4, .2);
 
   @include breakpoint(sm) {
-    min-height: 60rem;
     padding: 4.8rem 4rem;
   }
   
@@ -37,10 +35,20 @@
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
-      height: 12.8rem;
+      height: 18rem;
       margin-bottom: $margin-lg;
+
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: .4px;
+        margin-left: $margin-md;
+        color: $c-gray-3;
+      }
   
       input {
+        display: block;
         font-family: $font-body;
         font-size: 1.8rem;
         font-weight: 700;
@@ -136,7 +144,7 @@
 
       &:hover {
         & .results-album-img {
-          opacity: .8;
+          opacity: .6;
         }
 
         i {
