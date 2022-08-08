@@ -18,7 +18,7 @@
       font-size: 2.7rem;
       font-weight: 400;
       line-height: 1.2;
-      margin-bottom: $margin-sm;
+      margin-bottom: $m-sm;
       color: $c-gray-4;
     }
 
@@ -28,7 +28,7 @@
       font-weight: 400;
       letter-spacing: .25px;
       width: 84%;
-      margin-bottom: $margin-md;
+      margin-bottom: $m-md;
       color: $c-gray-3;
     }
 
@@ -37,14 +37,14 @@
       flex-flow: column nowrap;
       justify-content: space-between;
       height: 18rem;
-      margin-bottom: $margin-lg;
+      margin-bottom: $m-md;
 
       label {
         display: block;
         font-size: 13px;
         font-weight: 400;
         letter-spacing: .4px;
-        margin-left: $margin-md;
+        margin-left: $m-md;
         color: $c-gray-3;
       }
   
@@ -100,9 +100,10 @@
       font-size: 2.7rem;
       font-weight: 700;
       letter-spacing: 0px;
+      font-style: italic;
       line-height: 1.2;
       color: $c-pri;
-      margin-bottom: $margin-xs;
+      margin-bottom: $m-xs;
     }
 
     &-album-artist {
@@ -111,14 +112,14 @@
       letter-spacing: .15px;
       line-height: 1.2;
       color: $c-gray-4;
-      margin-bottom: $margin-md;
+      margin-bottom: $m-md;
     }
 
     &-album-link {
       position: relative;
       display: block;
       text-align: center;
-      margin-bottom: $margin-lg;
+      margin-bottom: $m-lg;
 
       .results-album-img {
         display: block;
@@ -172,9 +173,10 @@
 
 .alert-msg {
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: .1px;
   text-align: right;
-  margin-top: $margin-sm;
+  margin-top: $m-md;
+  margin-right: $m-md;
   color: $c-alert;
 }
