@@ -8,6 +8,7 @@
   box-shadow: 0 8px 64px rgba($c-gray-4, .2);
 
   @include breakpoint(sm) {
+    min-height: 60rem;
     padding: 4.8rem 4rem;
   }
   
