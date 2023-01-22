@@ -28,7 +28,7 @@ class UI {
   showResults = (similarArtistTopAlbum) => {
     this.results.style.display = 'block';
     this.resultsAlbumArtistLink.textContent = similarArtistTopAlbum.artist.name;
-    this.resultsAlbumArtistLink.href = `https://www.google.com/search?q=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,'+')}`;
+    this.resultsAlbumArtistLink.href = `https://en.wikipedia.org/w/index.php?search=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,'+')}`;
     this.resultsAlbumTitleLink.textContent = similarArtistTopAlbum.name;
     this.resultsAlbumTitleLink.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,'+')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g,'+')}`;
     this.resultsAlbumLink.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,'+')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g,'+')}`;
