@@ -43,9 +43,7 @@ const handleSubmit = async (event) => {
 };
 
 const filterSimilarArtists = (similarArtists) => {
-  const filteredSimilarArtists = similarArtists[0].filter((artist) => {
-    return similarArtists[1].includes(artist);
-  });
+  const filteredSimilarArtists = similarArtists[0].filter((artist) => similarArtists[1].includes(artist));
 
   if (filteredSimilarArtists.length === 0) {
     throw new Error('No matches found.');
@@ -55,11 +53,8 @@ const filterSimilarArtists = (similarArtists) => {
 };
 
 const filterTopAlbums = (topAlbums) => {
-  const filteredTopAlbums = topAlbums.filter((album) => {
-    return removeCompilations(album.name.toLowerCase());
-  }).filter((album) => {
-    return album.image[3]['#text'].length > 0;
-  });
+  const filteredTopAlbums = topAlbums.filter((album) => removeCompilations(album.name.toLowerCase()))
+    .filter((album) => album.image[3]['#text'].length > 0);
 
   return filteredTopAlbums[0];
 };
@@ -68,9 +63,7 @@ const removeCompilations = (album) => {
   const compilationKeywords = 'best, collection, deluxe, disc, essential, greatest hits, hits, volume, edition, standard'.split(', ');
   let flag = 0;
 
-  compilationKeywords.forEach((keyword) => {
-    flag = flag + album.includes(keyword);
-  });
+  compilationKeywords.forEach((keyword) => flag = flag + album.includes(keyword));
 
   return (flag === 0);
 };

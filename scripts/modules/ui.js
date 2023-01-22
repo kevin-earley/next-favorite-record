@@ -7,7 +7,9 @@ class UI {
     this.submitBtn = document.querySelector('.submit');
     this.results = document.querySelector('.results');
     this.resultsAlbumArtist = document.querySelector('.results-album-artist');
+    this.resultsAlbumArtistLink = document.querySelector('.results-album-artist-link');
     this.resultsAlbumTitle = document.querySelector('.results-album-title');
+    this.resultsAlbumTitleLink = document.querySelector('.results-album-title-link');
     this.resultsAlbumLink = document.querySelector('.results-album-link');
     this.resultsAlbumImg = document.querySelector('.results-album-img');
     this.redoLink = document.querySelector('.results-redo-link');
@@ -25,17 +27,20 @@ class UI {
   // Results Functions
   showResults = (similarArtistTopAlbum) => {
     this.results.style.display = 'block';
-    this.resultsAlbumArtist.textContent = similarArtistTopAlbum.artist.name;
-    this.resultsAlbumTitle.textContent = similarArtistTopAlbum.name;
-    this.resultsAlbumLink.href = similarArtistTopAlbum.url;
+    this.resultsAlbumArtistLink.textContent = similarArtistTopAlbum.artist.name;
+    this.resultsAlbumArtistLink.href = `https://www.google.com/search?q=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,'+')}`;
+    this.resultsAlbumTitleLink.textContent = similarArtistTopAlbum.name;
+    this.resultsAlbumTitleLink.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,'+')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g,'+')}`;
     this.resultsAlbumLink.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name.toLowerCase().replace(/ /g,'+')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g,'+')}`;
     this.resultsAlbumImg.src = similarArtistTopAlbum.image[3]['#text'];
   };
 
   hideResults = () => {
     this.results.style.display = 'none';
-    this.resultsAlbumArtist.textContent = '';
-    this.resultsAlbumTitle.textContent = '';
+    this.resultsAlbumArtistLink.textContent = '';
+    this.resultsAlbumArtistLink.href = '';
+    this.resultsAlbumTitleLink.textContent = '';
+    this.resultsAlbumTitleLink.href = '';
     this.resultsAlbumLink.href = '';
     this.resultsAlbumImg.src = '';
   };

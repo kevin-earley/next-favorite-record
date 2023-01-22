@@ -4,9 +4,9 @@
   margin: 0 auto;
   padding: 4.8rem;
   background-color: $c-gray-1;
-  border: 1px solid $c-gray-3;
+  border: 1px solid $c-gray-2;
   border-radius: 12px;
-  box-shadow: 0 8px 12px rgba($c-gray-4, 0.12);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 
   @include breakpoint("sm") {
     min-height: 68rem;
@@ -15,17 +15,18 @@
   .form {
     &-heading {
       font-family: $font-heading;
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1;
       margin-bottom: $m-md;
       color: $c-gray-4;
     }
 
     &-description {
       display: block;
-      font-size: 1.5rem;
+      font-size: 14px;
       font-weight: 400;
+      letter-spacing: 0.25px;
       width: 85%;
       margin-bottom: $m-xl;
       color: $c-gray-3;
@@ -42,7 +43,9 @@
         display: block;
         font-size: 12px;
         font-weight: 700;
+        letter-spacing: 0.4px;
         text-transform: uppercase;
+        margin-bottom: $m-xs;
         margin-left: $m-xl;
         color: $c-gray-3;
       }
@@ -50,8 +53,9 @@
       input {
         display: block;
         font-family: $font-body;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 700;
+        letter-spacing: 0.15px;
         width: 100%;
         margin-bottom: $m-lg;
         padding: 2rem 3.2rem;
@@ -73,16 +77,17 @@
   
       button {
         font-family: $font-body;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        padding: 2rem 4.8rem;
+        letter-spacing: 0.15px;
+        padding: 2rem 4rem;
         color:  $c-white;
         background: $c-pri;
         border: none;
-        border-radius: 50px;
+        border-radius: 100px;
         outline: 0;
         cursor: pointer;
-        transition: all .2s;
+        transition: all 0.2s;
       
         &:hover {
           background: $c-pri-alt;
@@ -93,25 +98,42 @@
 
   .results {
     &-album-artist {
-      font-size: 2.2rem;
-      font-weight: 400;
-      line-height: 1.2;
-      color: $c-gray-4;
       margin-bottom: $m-sm;
+
+      &-link {
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.15px;
+        text-decoration: none;
+        line-height: 1.2;
+        color: $c-gray-4;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     &-album-title {
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: $c-pri;
       margin-bottom: $m-lg;
+
+      &-link {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-decoration: none;
+        line-height: 1.2;
+        color: $c-gray-4;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
-
     &-album-link {
-      position: relative;
       display: block;
+      position: relative;
       text-align: center;
       margin-bottom: $m-xl;
 
@@ -151,8 +173,9 @@
     }
 
     &-redo-link {
-      font-size: 1.5rem;
+      font-size: 14px;
       font-weight: 400;
+      letter-spacing: 0.1px;
       text-decoration: none;
       color: $c-gray-3;
 
@@ -165,8 +188,9 @@
 }
 
 .alert-msg {
-  font-size: 1.5rem;
+  font-size: 14px;
   font-weight: 700;
+  letter-spacing: 0.1px;
   text-align: right;
   margin-top: $m-md;
   margin-right: $m-md;
