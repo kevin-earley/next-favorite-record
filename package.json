@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass-dev": "sass --watch --update --style=expanded styles/scss/main.scss styles/main.css",
-    "sass-prod": "sass --no-source-map --style=compressed styles/scss:styles/"
+    "start": "sass --watch --update --style=expanded styles/scss/main.scss styles/main.css",
+    "build": "sass --no-source-map --style=compressed styles/scss:styles/"
   },
   "author": "Kevin Earley",
   "license": "ISC",

@@ -17,7 +17,7 @@ class Lastfm {
       const parsed = await data.json();
 
       if (data.status >= 400 && data.status < 600) throw new Error(parsed.message);
-      if (parsed.error) throw new Error(`Artist/Band ${i + 1} not found.`);
+      if (parsed.error) throw new Error(`Artist ${i + 1} not found.`);
 
       mappedSimilarArtists.push(parsed.similarartists.artist.map(artist => artist.name));
     }
