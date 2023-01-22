@@ -1,16 +1,17 @@
-import { ui } from "./modules/ui.js";
-import { lastfm } from "./modules/lastfm.js";
+import { ui } from './modules/ui.js';
+import { lastfm } from './modules/lastfm.js';
 
-ui.submitBtn.addEventListener('click', handleSubmit);
-ui.redoLink.addEventListener('click', handleRedo);
-
-async function handleSubmit(event) {
-  if (event.preventDefault) event.preventDefault();
+const handleSubmit = async (event) => {
+  if (event.preventDefault) {
+    event.preventDefault();
+  };
 
   ui.removeAlert();
 
   try {
-    if (ui.artistInput01.value === '' || ui.artistInput02.value === '') throw new Error('Please fill in both inputs.');
+    if (ui.artistInput01.value === '' || ui.artistInput02.value === '') {
+      throw new Error('Please fill in both inputs.');
+    };
 
     ui.hideForm();
     ui.appendLoader();
@@ -23,7 +24,9 @@ async function handleSubmit(event) {
 
     const topAlbums = await lastfm.getTopAlbums(randomSimilarArtist);
 
-    if (topAlbums.length < 50) throw new Error('Albums length error.');
+    if (topAlbums.length < 50) {
+      throw new Error('Albums length error.');
+    };
 
     ui.removeLoader();
     ui.showResults(filterTopAlbums(topAlbums));
@@ -35,37 +38,47 @@ async function handleSubmit(event) {
       ui.removeLoader();
       ui.showForm();
       ui.appendAlert(error.message);
-    }
-  }
-}
+    };
+  };
+};
 
-function filterSimilarArtists(similarArtists) {
-  const filteredSimilarArtists = similarArtists[0].filter(artist => similarArtists[1].includes(artist));
+const filterSimilarArtists = (similarArtists) => {
+  const filteredSimilarArtists = similarArtists[0].filter((artist) => {
+    return similarArtists[1].includes(artist);
+  });
 
-  if (filteredSimilarArtists.length === 0) throw new Error('No matches found.');
+  if (filteredSimilarArtists.length === 0) {
+    throw new Error('No matches found.');
+  };
 
   return filteredSimilarArtists;
-}
+};
 
-function filterTopAlbums(topAlbums) {
-  const filteredTopAlbums = topAlbums.filter(album => removeCompilations(album.name.toLowerCase()))
-    .filter(album => album.image[3]["#text"].length > 0);
+const filterTopAlbums = (topAlbums) => {
+  const filteredTopAlbums = topAlbums.filter((album) => {
+    return removeCompilations(album.name.toLowerCase());
+  }).filter((album) => {
+    return album.image[3]['#text'].length > 0;
+  });
 
   return filteredTopAlbums[0];
-}
+};
 
-function removeCompilations(album) {
-  const compilationKeywords = "best, collection, deluxe, disc, essential, greatest hits, hits, volume, edition, standard".split(", ");
+const removeCompilations = (album) => {
+  const compilationKeywords = 'best, collection, deluxe, disc, essential, greatest hits, hits, volume, edition, standard'.split(', ');
   let flag = 0;
 
-  compilationKeywords.forEach(function(keyword) {
-    flag = flag + album.includes(keyword)
+  compilationKeywords.forEach((keyword) => {
+    flag = flag + album.includes(keyword);
   });
 
   return (flag === 0);
-}
+};
 
-function handleRedo() {
+const handleRedo = () => {
   ui.hideResults();
   ui.showForm();
-}
+};
+
+ui.submitBtn.addEventListener('click', handleSubmit);
+ui.redoLink.addEventListener('click', handleRedo);

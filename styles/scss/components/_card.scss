@@ -24,10 +24,9 @@
 
     &-description {
       display: block;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 400;
-      letter-spacing: 0.25px;
-      width: 80%;
+      width: 85%;
       margin-bottom: $m-xl;
       color: $c-gray-3;
 
@@ -41,9 +40,8 @@
 
       label {
         display: block;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 700;
-        letter-spacing: 0.4px;
         text-transform: uppercase;
         margin-left: $m-xl;
         color: $c-gray-3;
@@ -52,9 +50,8 @@
       input {
         display: block;
         font-family: $font-body;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         font-weight: 700;
-        letter-spacing: 0.5px;
         width: 100%;
         margin-bottom: $m-lg;
         padding: 2rem 3.2rem;
@@ -76,9 +73,8 @@
   
       button {
         font-family: $font-body;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         font-weight: 700;
-        letter-spacing: 0.15px;
         padding: 2rem 4.8rem;
         color:  $c-white;
         background: $c-pri;
@@ -96,24 +92,22 @@
   }
 
   .results {
-    &-album-title {
-      font-size: 2.8rem;
-      font-weight: 700;
-      letter-spacing: 0;
-      font-style: italic;
-      line-height: 1.2;
-      color: $c-pri;
-      margin-bottom: $m-md;
-    }
-
     &-album-artist {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 400;
-      letter-spacing: 0.15px;
       line-height: 1.2;
       color: $c-gray-4;
+      margin-bottom: $m-sm;
+    }
+
+    &-album-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: $c-pri;
       margin-bottom: $m-lg;
     }
+
 
     &-album-link {
       position: relative;
@@ -157,9 +151,8 @@
     }
 
     &-redo-link {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 400;
-      letter-spacing: 0.1px;
       text-decoration: none;
       color: $c-gray-3;
 
@@ -172,9 +165,8 @@
 }
 
 .alert-msg {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.1px;
   text-align: right;
   margin-top: $m-md;
   margin-right: $m-md;
