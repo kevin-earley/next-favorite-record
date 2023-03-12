@@ -2,16 +2,16 @@
   max-width: 56rem;
   min-height: 72rem;
   margin: 0 auto;
-  padding: 4.8rem;
+  padding: 4.4rem;
   background-color: $c-gray-1;
   border: 1px solid $c-gray-2;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
 
-  @include breakpoint("sm") {
+  @include breakpoint('sm') {
     min-height: 68rem;
   }
-  
+
   .form {
     &-heading {
       font-family: $font-heading;
@@ -27,13 +27,8 @@
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.25px;
-      width: 85%;
       margin-bottom: $m-xl;
       color: $c-gray-3;
-
-      @include breakpoint("sm") {
-        width: 100%;
-      }
     }
 
     &-inputs {
@@ -41,54 +36,54 @@
 
       label {
         display: block;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.4px;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
-        margin-bottom: $m-xs;
+        margin-bottom: $m-sm;
         margin-left: $m-xl;
         color: $c-gray-3;
       }
-  
+
       input {
         display: block;
         font-family: $font-body;
         font-size: 1.6rem;
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: 0.15px;
         width: 100%;
         margin-bottom: $m-lg;
         padding: 2rem 3.2rem;
         color: $c-gray-4;
         background-color: $c-white;
-        border: 1px solid  $c-gray-2;
+        border: 1px solid $c-gray-2;
         border-radius: 100px;
         outline: 0;
-  
+
         &:focus {
           padding: calc(2rem - 1px) calc(3.2rem - 1px);
           border: 2px solid $c-pri;
         }
       }
     }
-  
+
     &-button {
       text-align: right;
-  
+
       button {
         font-family: $font-body;
-        font-size: 1.6rem;
-        font-weight: 700;
-        letter-spacing: 0.15px;
-        padding: 2rem 4rem;
-        color:  $c-white;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+        padding: 2rem 3.2rem;
+        color: $c-white;
         background: $c-pri;
         border: none;
         border-radius: 100px;
         outline: 0;
         cursor: pointer;
         transition: all 0.2s;
-      
+
         &:hover {
           background: $c-pri-alt;
         }
@@ -98,7 +93,7 @@
 
   .results {
     &-album-artist {
-      margin-bottom: $m-sm;
+      margin-bottom: $m-xs;
 
       &-link {
         font-size: 2rem;
@@ -107,7 +102,7 @@
         text-decoration: none;
         line-height: 1.2;
         color: $c-gray-4;
-  
+
         &:hover {
           text-decoration: underline;
         }
@@ -119,12 +114,12 @@
 
       &-link {
         font-size: 2.4rem;
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: 0;
         text-decoration: none;
         line-height: 1.2;
         color: $c-gray-4;
-  
+
         &:hover {
           text-decoration: underline;
         }
@@ -141,7 +136,7 @@
         display: block;
         width: 100%;
         border: 1px solid $c-gray-2;
-        border-radius: 12px;
+        border-radius: 16px;
         opacity: 1;
         transition: all 0.4s;
       }
@@ -173,6 +168,12 @@
     }
 
     &-redo-link {
+      margin-bottom: $m-sm;
+    }
+
+    &-redo-link,
+    &-again-link {
+      display: block;
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.1px;
