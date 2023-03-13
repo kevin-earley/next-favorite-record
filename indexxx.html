@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Next Favorite Record</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+<body>
+	<main>
+
+		
+		<div class="container">
+			<div class="card">
+				<div class="form" style="display: block;">
+					<h1 class="form-heading">Next Favorite Record</h1>
+					<p class="form-description">Discover your next favorite record by entering two of your favorite artists, bands, singers, rappers - whoever.</p>
+					<form>
+						<div class="form-inputs">
+							<div>
+								<label for="artist-input-01">Artist 1</label>
+								<input type="text" id="artist-input-01" value="limbeck"></input>
+							</div>
+							<div>
+								<label for="artist-input-02">Artist 2</label>
+								<input type="text" id="artist-input-02" value="wilco"></input>
+							</div>
+						</div>
+						<div class="form-button">
+							<button type="submit" class="submit">Gimme a Record</button>
+						</div>
+					</form>
+				</div>
+				<div class="results" style="display: none;">
+					<h2 class="results-album-artist"><a href="" class="results-album-artist-link" target="_blank"></a></h2>
+					<h3 class="results-album-title"></h3>
+
+					<div class="results-main">
+						<div class="results-album">
+							<img class="results-album-img" src="" alt="">
+						</div>
+	
+						<div class="listen-btns">
+							<a class="listen-btn apple-music" target="_blank"><i class="fa-brands fa-apple"></i> Apple Music</a>
+							<a class="listen-btn spotify" target="_blank"><i class="fa-brands fa-spotify"></i> Spotify</a>
+							<a class="listen-btn youtube" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+							<a class="listen-btn discogs" target="_blank"><i class="fa-solid fa-record-vinyl"></i> Discogs</a>
+						</div>
+					</div>
+
+					<a class="results-redo-link">Get a different record</a>
+					<a class="results-again-link">Enter new artists</a>
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+
+	<script src="scripts/main.js" type="module"></script>
+</body>
+</html>

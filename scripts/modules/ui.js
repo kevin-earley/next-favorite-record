@@ -1,93 +1,109 @@
 class UI {
   constructor() {
     this.card = document.querySelector('.card');
+
     this.form = document.querySelector('.form');
     this.artistInput01 = document.querySelector('#artist-input-01');
     this.artistInput02 = document.querySelector('#artist-input-02');
-    this.submitBtn = document.querySelector('.submit');
+    this.btnSubmit = document.querySelector('.submit');
+
     this.results = document.querySelector('.results');
-    this.resultsAlbumArtist = document.querySelector('.results-album-artist');
-    this.resultsAlbumArtistLink = document.querySelector(
-      '.results-album-artist-link'
-    );
-    this.resultsAlbumTitle = document.querySelector('.results-album-title');
-    this.resultsAlbumTitleLink = document.querySelector(
-      '.results-album-title-link'
-    );
-    this.resultsAlbumLink = document.querySelector('.results-album-link');
-    this.resultsAlbumImg = document.querySelector('.results-album-img');
-    this.redoLink = document.querySelector('.results-redo-link');
-    this.againLink = document.querySelector('.results-again-link');
+    this.resultsArtistLink = document.querySelector('.results-artist-link');
+    this.resultsTitle = document.querySelector('.results-title');
+    this.resultsImg = document.querySelector('.results-img');
+
+    this.btnApple = document.querySelector('.apple-music');
+    this.btnSpotify = document.querySelector('.spotify');
+    this.btnAmazon = document.querySelector('.amazon');
+    this.btnYouTube = document.querySelector('.youtube');
+    this.btnDiscogs = document.querySelector('.discogs');
+
+    this.linkNewResult = document.querySelector('.new-result');
+    this.linkNewValues = document.querySelector('.new-values');
   }
 
   // Form Functions
-  showForm = () => {
+  showForm() {
     this.form.style.display = 'block';
-  };
+  }
 
-  hideForm = () => {
+  hideForm() {
     this.form.style.display = 'none';
-  };
+  }
 
   // Results Functions
-  showResults = (similarArtistTopAlbum) => {
+  showResults(similarArtistTopAlbum) {
     this.results.style.display = 'block';
-    this.resultsAlbumArtistLink.textContent = similarArtistTopAlbum.artist.name;
-    this.resultsAlbumArtistLink.href = `https://en.wikipedia.org/w/index.php?search=${similarArtistTopAlbum.artist.name
-      .toLowerCase()
-      .replace(/ /g, '+')}`;
-    this.resultsAlbumTitleLink.textContent = similarArtistTopAlbum.name;
-    this.resultsAlbumTitleLink.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name
-      .toLowerCase()
-      .replace(/ /g, '+')}+${similarArtistTopAlbum.name
-      .toLowerCase()
-      .replace(/ /g, '+')}`;
-    this.resultsAlbumLink.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name
-      .toLowerCase()
-      .replace(/ /g, '+')}+${similarArtistTopAlbum.name
-      .toLowerCase()
-      .replace(/ /g, '+')}`;
-    this.resultsAlbumImg.src = similarArtistTopAlbum.image[3]['#text'];
-  };
 
-  hideResults = () => {
+    this.resultsArtistLink.textContent = similarArtistTopAlbum.artist.name;
+
+    this.resultsArtistLink.href = `https://en.wikipedia.org/w/index.php?search=${similarArtistTopAlbum.artist.name
+      .toLowerCase()
+      .replace(/ /g, '+')}`;
+
+    this.resultsTitle.textContent = similarArtistTopAlbum.name;
+
+    this.resultsImg.src = similarArtistTopAlbum.image[3]['#text'];
+
+    this.btnApple.href = `https://music.apple.com/us/search?term=${similarArtistTopAlbum.artist.name
+      .toLowerCase()
+      .replace(/ /g, '%2B')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '%2B')}`;
+
+    this.btnSpotify.href = `https://open.spotify.com/search/${similarArtistTopAlbum.artist.name
+      .toLowerCase()
+      .replace(/ /g, '%20')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '%20')}/albums`;
+
+    this.btnAmazon.href = `https://www.amazon.com/s?k=${similarArtistTopAlbum.artist.name
+      .toLowerCase()
+      .replace(/ /g, '%20')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '%20')}&i=digital-music`;
+
+    this.btnYouTube.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name
+      .toLowerCase()
+      .replace(/ /g, '+')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '+')}`;
+
+    this.btnDiscogs.href = `https://www.discogs.com/search/?q=${similarArtistTopAlbum.artist.name
+      .toLowerCase()
+      .replace(/ /g, '+')}+${similarArtistTopAlbum.name
+      .toLowerCase()
+      .replace(/ /g, '+')}&format_exact=Vinyl&type=release`;
+  }
+
+  hideResults() {
     this.results.style.display = 'none';
-    this.resultsAlbumArtistLink.textContent = '';
-    this.resultsAlbumArtistLink.href = '';
-    this.resultsAlbumTitleLink.textContent = '';
-    this.resultsAlbumTitleLink.href = '';
-    this.resultsAlbumLink.href = '';
-    this.resultsAlbumImg.src = '';
-  };
+    this.resultsArtistLink.textContent = '';
+    this.resultsArtistLink.href = '';
+    this.resultsTitle.textContent = '';
+    this.resultsImg.src = '';
+  }
 
   // Loader Functions
-  appendLoader = () => {
+  appendLoader() {
     if (document.querySelector('.loader') === null) {
       const loaderImg = document.createElement('div');
       loaderImg.classList.add('loader');
       this.card.appendChild(loaderImg);
     }
-  };
+  }
 
-  removeLoader = () => {
+  removeLoader() {
     if (document.querySelector('.loader') !== null) {
       document.querySelector('.loader').remove();
     }
-  };
+  }
 
   // Alert Functions
-  appendAlert = (msg) => {
+  appendAlert(msg) {
     const alertMsg = document.createElement('p');
     alertMsg.classList.add('alert-msg');
     alertMsg.textContent = msg;
     this.card.appendChild(alertMsg);
-  };
+  }
 
-  removeAlert = () => {
+  removeAlert() {
     if (document.querySelector('.alert-msg') !== null) {
       document.querySelector('.alert-msg').remove();
     }
-  };
+  }
 }
 
 export const ui = new UI();

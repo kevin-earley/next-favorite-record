@@ -1,0 +1,63 @@
+.btn {
+  display: inline-block;
+  font-family: $font-body;
+  letter-spacing: 0.1px;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &-pri {
+    padding: 2rem 3.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $c-white;
+    background: $c-pri;
+    border: 1px solid transparent;
+
+    &:hover {
+      color: $c-white;
+      background: $c-pri-alt;
+    }
+
+    &:focus-visible {
+      outline: 1px auto $c-gray-4;
+    }
+  }
+
+  &-sec {
+    margin-right: 0.5rem;
+    padding: 1.2rem 2rem;
+    font-size: 12px;
+    font-weight: 400;
+    color: $c-black;
+    background: $c-gray-2;
+    border: 1px solid $c-gray-3;
+
+    &:hover {
+      color: $c-white;
+      background: $c-gray-4;
+      border: 1px solid $c-gray-4;
+    }
+
+    &:focus-visible {
+      outline: 1px auto $c-pri;
+    }
+  }
+
+  &-label {
+    display: inline-block;
+
+    @include breakpoint('sm') {
+      display: none;
+    }
+  }
+
+  i {
+    margin-right: 1rem;
+
+    @include breakpoint('sm') {
+      margin-right: 0;
+    }
+  }
+}

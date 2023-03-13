@@ -3,11 +3,11 @@ class Lastfm {
     this.apiKey = 'c136737ab26b0afd9e14e201b8571111';
   }
 
-  artificialLoad = (ms) => {
+  artificialLoad(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
-  };
+  }
 
-  getSimilarArtists = async (artists) => {
+  async getSimilarArtists(artists) {
     let mappedSimilarArtists = [];
 
     for (let i = 0; i < 2; i++) {
@@ -34,9 +34,9 @@ class Lastfm {
     }
 
     return mappedSimilarArtists;
-  };
+  }
 
-  getTopAlbums = async (artist) => {
+  async getTopAlbums(artist) {
     const data = await fetch(
       `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artist}&api_key=${this.apiKey}&format=json`
     );
@@ -47,7 +47,7 @@ class Lastfm {
     }
 
     return parsed.topalbums.album;
-  };
+  }
 }
 
 export const lastfm = new Lastfm();

@@ -1,0 +1,29 @@
+.card {
+  max-width: 52rem;
+  min-height: 72rem;
+  margin: 0 auto;
+  padding: 4rem;
+  background-color: $c-gray-1;
+  border: 1px solid $c-gray-2;
+  border-radius: 16px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+
+  .form {
+    .btn {
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  .results {
+    text-align: center;
+
+    &-img {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid $c-gray-2;
+      opacity: 1;
+    }
+  }
+}

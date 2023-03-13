@@ -1,0 +1,91 @@
+h1 {
+  font-family: $font-heading;
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1;
+  color: $c-gray-4;
+}
+
+h2 {
+  a {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    text-decoration: none;
+    line-height: 1.2;
+    color: $c-gray-4;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 1px auto $c-pri;
+    }
+  }
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  color: $c-gray-4;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  color: $c-gray-3;
+}
+
+a {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  text-decoration: underline;
+  color: $c-gray-3;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $c-pri;
+    cursor: pointer;
+  }
+}
+
+label {
+  display: block;
+  margin-left: 3rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  color: $c-gray-3;
+}
+
+input[type='text'] {
+  display: block;
+  font-family: $font-body;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  color: $c-gray-4;
+  background-color: $c-white;
+  border: 1px solid $c-gray-2;
+  border-radius: 100px;
+  padding: 2rem 3.2rem;
+  width: 100%;
+
+  &:focus {
+    border: 2px solid $c-pri;
+    padding: calc(2rem - 1px) calc(3.2rem - 1px);
+  }
+
+  &:focus-visible {
+    outline: 1px auto $c-pri;
+  }
+}
