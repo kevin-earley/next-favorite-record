@@ -16,7 +16,7 @@ class UI {
     this.btnSpotify = document.querySelector('.spotify');
     this.btnAmazon = document.querySelector('.amazon');
     this.btnYouTube = document.querySelector('.youtube');
-    this.btnDiscogs = document.querySelector('.discogs');
+    // this.btnDiscogs = document.querySelector('.discogs');
 
     this.linkNewResult = document.querySelector('.new-result');
     this.linkNewValues = document.querySelector('.new-values');
@@ -61,11 +61,11 @@ class UI {
       .toLowerCase()
       .replace(/ /g, '+')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '+')}`;
 
-    this.btnDiscogs.href = `https://www.discogs.com/search/?q=${similarArtistTopAlbum.artist.name
-      .toLowerCase()
-      .replace(/ /g, '+')}+${similarArtistTopAlbum.name
-      .toLowerCase()
-      .replace(/ /g, '+')}&format_exact=Vinyl&type=release`;
+    // this.btnDiscogs.href = `https://www.discogs.com/search/?q=${similarArtistTopAlbum.artist.name
+    //   .toLowerCase()
+    //   .replace(/ /g, '+')}+${similarArtistTopAlbum.name
+    //   .toLowerCase()
+    //   .replace(/ /g, '+')}&format_exact=Vinyl&type=release`;
   }
 
   hideResults() {
