@@ -18,7 +18,7 @@ html {
 body {
   font-family: $font-body;
   line-height: 1.7;
-  background-color: $c-gray-5;
+  background-color: $c-gray-4;
 }
 
 img {
@@ -30,9 +30,9 @@ main {
   display: grid;
   place-items: center;
   height: 100vh;
-}
-
-.container {
   padding: 4rem;
-  width: 100%;
+
+  @include breakpoint('sm') {
+    place-items: start center;
+  }
 }

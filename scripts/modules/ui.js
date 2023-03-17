@@ -1,23 +1,18 @@
 class UI {
   constructor() {
     this.card = document.querySelector('.card');
-
     this.form = document.querySelector('.form');
     this.artistInput01 = document.querySelector('#artist-input-01');
     this.artistInput02 = document.querySelector('#artist-input-02');
     this.btnSubmit = document.querySelector('.submit');
-
     this.results = document.querySelector('.results');
     this.resultsArtistLink = document.querySelector('.results-artist-link');
     this.resultsTitle = document.querySelector('.results-title');
     this.resultsImg = document.querySelector('.results-img');
-
     this.btnApple = document.querySelector('.apple-music');
     this.btnSpotify = document.querySelector('.spotify');
-    this.btnAmazon = document.querySelector('.amazon');
     this.btnYouTube = document.querySelector('.youtube');
-    // this.btnDiscogs = document.querySelector('.discogs');
-
+    this.btnDiscogs = document.querySelector('.discogs');
     this.linkNewResult = document.querySelector('.new-result');
     this.linkNewValues = document.querySelector('.new-values');
   }
@@ -45,27 +40,24 @@ class UI {
 
     this.resultsImg.src = similarArtistTopAlbum.image[3]['#text'];
 
-    this.btnApple.href = `https://music.apple.com/us/search?term=${similarArtistTopAlbum.artist.name
+    this.btnApple.href = `https://music.apple.com/search?term=${similarArtistTopAlbum.artist.name
       .toLowerCase()
-      .replace(/ /g, '%2B')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '%2B')}`;
+      .replace(/ /g, '+')}+${similarArtistTopAlbum.name
+      .toLowerCase().replace(/ /g, '+')}`;
 
     this.btnSpotify.href = `https://open.spotify.com/search/${similarArtistTopAlbum.artist.name
       .toLowerCase()
-      .replace(/ /g, '%20')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '%20')}/albums`;
-
-    this.btnAmazon.href = `https://www.amazon.com/s?k=${similarArtistTopAlbum.artist.name
-      .toLowerCase()
-      .replace(/ /g, '%20')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '%20')}&i=digital-music`;
+      .replace(/ /g, '%20')}+${similarArtistTopAlbum.name
+        .toLowerCase().replace(/ /g, '%20')}`;
 
     this.btnYouTube.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name
       .toLowerCase()
       .replace(/ /g, '+')}+${similarArtistTopAlbum.name.toLowerCase().replace(/ /g, '+')}`;
 
-    // this.btnDiscogs.href = `https://www.discogs.com/search/?q=${similarArtistTopAlbum.artist.name
-    //   .toLowerCase()
-    //   .replace(/ /g, '+')}+${similarArtistTopAlbum.name
-    //   .toLowerCase()
-    //   .replace(/ /g, '+')}&format_exact=Vinyl&type=release`;
+    this.btnDiscogs.href = `https://www.discogs.com/search/?q=${similarArtistTopAlbum.artist.name
+      .toLowerCase()
+      .replace(/ /g, '+')}+${similarArtistTopAlbum.name
+      .toLowerCase()}`;
   }
 
   hideResults() {

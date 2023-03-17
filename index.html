@@ -23,18 +23,19 @@
   </head>
   <body>
     <main>
-      <div class="container">
+
         <div class="card">
           <!-- Form -->
-          <!-- gotta bring the form element back for enter submits -->
           <div class="form" style="display: block;">
             <h1 class="mb-3">Next Favorite Record</h1>
-            <p class="mb-5">Find your next favorite record by entering the names of two of your favorite artists, bands, singers, rappers, etc.</p>
-            <label for="artist-input-01" class="mb-1">Artist 1</label>
-            <input type="text" id="artist-input-01" class="mb-4" value=""></input>
-            <label for="artist-input-02" class="mb-1">Artist 2</label>
-            <input type="text" id="artist-input-02" class="mb-5" value=""></input>
-            <button type="button" class="btn btn-pri submit">Gimme a Record</button>
+            <p class="mb-5">Enter the names of two of your favorite music artists, bands, singers, rappers, or whoever, and discover your next favorite record.</p>
+            <form action="" class="form-inputs">
+              <label for="artist-input-01" class="mb-1">Artist 1</label>
+              <input type="text" id="artist-input-01" class="mb-4" value=""></input>
+              <label for="artist-input-02" class="mb-1">Artist 2</label>
+              <input type="text" id="artist-input-02" class="mb-5" value=""></input>
+              <input type="submit" class="btn btn-pri submit" value="Gimme a Record"></input>
+            </form>
           </div>
 
           <!-- Results -->
@@ -43,20 +44,19 @@
             <h3 class="results-title mb-4"></h3>
 
             <img class="results-img mb-4" src="" alt="">
-  
+       
             <div class="results-btns mb-5">
               <a class="btn btn-sec apple-music" target="_blank"><i class="fa-brands fa-apple"></i><span class="btn-label">Apple Music</span></a>
               <a class="btn btn-sec spotify" target="_blank"><i class="fa-brands fa-spotify"></i><span class="btn-label">Spotify</span></a>
-              <a class="btn btn-sec amazon" target="_blank"><i class="fa-brands fa-amazon"></i><span class="btn-label">Amazon</span></a>
               <a class="btn btn-sec youtube" target="_blank"><i class="fa-brands fa-youtube"></i><span class="btn-label">YouTube</span></a>
-              <!-- <a class="btn btn-sec discogs" target="_blank"><i class="fa-solid fa-record-vinyl"></i><span class="btn-label">Discogs</span></a> -->
+              <a class="btn btn-sec discogs" target="_blank"><i class="fa-solid fa-record-vinyl"></i><span class="btn-label">Discogs</span></a>
             </div>
 
             <a class="new-result mb-2">Get a different record</a>
             <a class="new-values">Enter different artists</a>
           </div>
         </div>
-      </div>
+
     </main>
 
     <script src="scripts/main.js" type="module"></script>
