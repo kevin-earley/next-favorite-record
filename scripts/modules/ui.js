@@ -47,7 +47,7 @@ class UI {
 
     this.btnSpotify.href = `https://open.spotify.com/search/${similarArtistTopAlbum.artist.name
       .toLowerCase()
-      .replace(/ /g, '%20')}+${similarArtistTopAlbum.name
+      .replace(/ /g, '%20')}%20${similarArtistTopAlbum.name
         .toLowerCase().replace(/ /g, '%20')}`;
 
     this.btnYouTube.href = `https://www.youtube.com/results?search_query=${similarArtistTopAlbum.artist.name
