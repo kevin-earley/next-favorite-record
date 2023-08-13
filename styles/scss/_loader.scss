@@ -1,28 +1,26 @@
 .loader {
-  position: relative;
-  background: linear-gradient(0deg, transparent 50%, rgba($c-gray-4, 0.8) 50%) no-repeat 100% 0,
-    linear-gradient(90deg, rgba($c-gray-4, 0.8) 50%, transparent 50%) no-repeat 0 100%,
-    repeating-radial-gradient($c-gray-4, $c-gray-4 0.4rem, rgba($c-gray-2, 0.5) 0.5rem, $c-gray-4 0.6rem);
-  background-size: 50% 100%, 100% 50%, 100% 100%;
-  border: 0.4rem solid $c-gray-4;
-  border-radius: 50%;
-  margin: 0 auto;
-  width: 32rem;
-  height: 32rem;
-  animation: spin 1.6s infinite linear;
+	position: relative;
+	background: linear-gradient(0deg, transparent 50%, rgba($c-gray-4, 0.8) 50%) no-repeat 100% 0, linear-gradient(90deg, rgba($c-gray-4, 0.8) 50%, transparent 50%) no-repeat 0 100%, repeating-radial-gradient($c-gray-4, $c-gray-4 0.4rem, rgba($c-gray-2, 0.5) 0.5rem, $c-gray-4 0.6rem);
+	background-size: 50% 100%, 100% 50%, 100% 100%;
+	border: 0.4rem solid $c-gray-4;
+	border-radius: 50%;
+	margin: 0 auto;
+	width: 32rem;
+	height: 32rem;
+	animation: spin 1.6s infinite linear;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    background: $c-gray-4;
-    border: 1px solid $c-gray-4;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0.4rem $c-gray-1, inset 0 0 0 3.6rem $c-gray-1;
-    width: 8rem;
-    height: 8rem;
-    transform: translate(-50%, -50%);
-  }
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		background: $c-gray-4;
+		border: 1px solid $c-gray-4;
+		border-radius: 50%;
+		box-shadow: 0 0 0 0.4rem $c-gray-1, inset 0 0 0 3.6rem $c-gray-1;
+		width: 8rem;
+		height: 8rem;
+		transform: translate(-50%, -50%);
+	}
 }

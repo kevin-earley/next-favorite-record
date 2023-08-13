@@ -1,38 +1,38 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-  box-sizing: border-box;
-  font-size: 62.5%;
+	box-sizing: border-box;
+	font-size: 62.5%;
 
-  @include breakpoint('sm') {
-    font-size: 58.3333%;
-  }
+	@include breakpoint('sm') {
+		font-size: 58.3333%;
+	}
 }
 
 body {
-  font-family: $font-body;
-  line-height: 1.7;
-  background-color: $c-gray-4;
+	font-family: $font-body;
+	line-height: 1.7;
+	background-color: $c-gray-4;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 main {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  padding: 4rem;
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	padding: 4rem;
 
-  @include breakpoint('sm') {
-    place-items: start center;
-  }
+	@include breakpoint('sm') {
+		place-items: start center;
+	}
 }

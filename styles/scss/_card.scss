@@ -1,25 +1,26 @@
 .card {
-  max-width: 40rem;
-  background-color: $c-gray-4;
+	max-width: 40rem;
+	margin-bottom: 3rem;
+	background-color: $c-gray-4;
 
-  .form {
-    .btn {
-      margin-left: auto;
-    }
-  }
+	.form {
+		.btn {
+			margin-left: auto;
+		}
+	}
 
-  .results {
-    text-align: center;
+	.results {
+		text-align: center;
 
-    &-img {
-      width: 40rem;
-      border: 1px solid $c-gray-2;
-    }
+		&-img {
+			width: 40rem;
+			border: 1px solid $c-gray-2;
+		}
 
-    &-btns {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 1rem;
-    }
-  }
+		&-btns {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 1rem;
+		}
+	}
 }
