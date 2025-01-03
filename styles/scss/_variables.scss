@@ -1,18 +1,16 @@
+$sp-sm: 0.75rem;
+$sp-md: 2.375rem;
+$sp-lg: 4rem;
+
 $font-heading: 'Shrikhand', cursive;
 $font-body: 'Inter', sans-serif;
 
-$c-white: #fff;
-$c-black: #000;
+$white: #fff;
+$gray-1: #d4d4d8; // 3
+$gray-2: #3f3f46; // 7
+$gray-3: #27272a; // 8
+$gray-4: #18181b; // 9
 
-$c-gray-1: #eaeaeb;
-$c-gray-2: #94989e;
-$c-gray-3: #26282c;
-$c-gray-4: #131416;
+$danger: #f87171;
 
-$c-alert: #d84646;
-
-$m-xs: 0.25rem;
-$m-sm: 0.5rem;
-$m-md: 1rem;
-$m-lg: 1.5rem;
-$m-xl: 3rem;
+$text-color: $gray-1;

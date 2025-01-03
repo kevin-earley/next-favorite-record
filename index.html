@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Next Favorite Record</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Next Favorite Record</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Shrikhand&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  <body>
-    <main>
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/meta/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/meta/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/meta/favicon-16x16.png" />
+		<link rel="manifest" href="/images/meta/site.webmanifest" />
 
-        <div class="card">
-          <!-- Form -->
-          <div class="form" style="display: block;">
-            <h1 class="mb-3">Next Favorite Record</h1>
-            <p class="mb-5">Enter the names of two of your favorite music artists, bands, singers, rappers, or whoever, and discover your next favorite record.</p>
-            <form action="" class="form-inputs">
-              <label for="artist-input-01" class="mb-1">Artist 1</label>
-              <input type="text" id="artist-input-01" class="mb-4" value=""></input>
-              <label for="artist-input-02" class="mb-1">Artist 2</label>
-              <input type="text" id="artist-input-02" class="mb-5" value=""></input>
-              <input type="submit" class="btn btn-pri submit" value="Gimme a Record"></input>
-            </form>
-          </div>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Shrikhand&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="styles/main.css" />
 
-          <!-- Results -->
-          <div class="results" style="display: none;">
-            <h2 class="results-artist mb-1"><a href="" class="results-artist-link" target="_blank"></a></h2>
-            <h3 class="results-title mb-4"></h3>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-M9BCGCG7YP"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-            <img class="results-img mb-4" src="" alt="">
-       
-            <div class="results-btns mb-5">
-              <a class="btn btn-sec youtube" target="_blank"><i class="fa-brands fa-youtube"></i><span class="btn-label">YouTube</span></a>
-              <a class="btn btn-sec discogs" target="_blank"><i class="fa-solid fa-record-vinyl"></i><span class="btn-label">Discogs</span></a>
-            </div>
+			gtag('config', 'G-M9BCGCG7YP');
+		</script>
+	</head>
 
-            <a class="new-result mb-2">Get a different record</a>
-            <a class="new-values">Enter different artists</a>
-          </div>
-        </div>
+	<body>
+		<main>
+			<div class="card">
+				<div class="form" style="display: block">
+					<h1>Next Favorite Record</h1>
+					<p>Enter the names of two of your favorite music artists, bands, singers, rappers, or whoever, and discover your next favorite record.</p>
+					<form action="" class="form-inputs">
+						<label for="artist-input-01" hidden>Artist 1</label>
+						<input type="text" id="artist-input-01" placeholder="Artist 1" value="" />
+						<label for="artist-input-02" hidden>Artist 2</label>
+						<input type="text" id="artist-input-02" placeholder="Artist 2" value="" />
+						<input type="submit" class="btn btn-primary submit" value="Gimme a Record" />
+					</form>
+				</div>
 
-    </main>
+				<div class="results" style="display: none">
+					<h2 class="results-artist">
+						<a href="" class="results-artist-link" target="_blank"></a>
+					</h2>
+					<h3 class="results-title">
+						<a href="" class="results-title-link" target="_blank"></a>
+					</h3>
 
-    <script src="scripts/main.js" type="module"></script>
-  </body>
+					<a href="" class="results-img-link" target="_blank">
+						<img class="icon-play" src="/images/play-circle.svg" alt="" />
+						<img class="results-img" src="" alt="" />
+					</a>
+
+					<div class="results-footer">
+						<a class="new-result" href="#">Get a different record</a>
+						<a class="new-values" href="#">Enter different artists</a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="scripts/main.js" type="module"></script>
+	</body>
 </html>

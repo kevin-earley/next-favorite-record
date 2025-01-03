@@ -10,7 +10,7 @@ async function handleSubmit(event) {
 		event.preventDefault();
 	}
 
-	ui.removeAlert();
+	ui.removeError();
 
 	try {
 		if (ui.artistInput01.value === '' || ui.artistInput02.value === '') {
@@ -32,6 +32,13 @@ async function handleSubmit(event) {
 			throw new Error('Albums length error.');
 		}
 
+		gtag('event', 'form_submission', {
+			event_category: 'Form Submission',
+			event_action: 'Submit',
+			artist_input_1: ui.artistInput01.value,
+			artist_input_2: ui.artistInput02.value,
+		});
+
 		ui.removeLoader();
 		ui.showResults(filterTopAlbums(topAlbums));
 	} catch (error) {
@@ -40,7 +47,7 @@ async function handleSubmit(event) {
 		} else {
 			ui.removeLoader();
 			ui.showForm();
-			ui.appendAlert(error.message);
+			ui.appendError(error.message);
 		}
 	}
 }
